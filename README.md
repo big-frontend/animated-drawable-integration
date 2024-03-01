@@ -1,5 +1,6 @@
+## 动图优化
 
-Glide中存在AnimatedWebpDecoder/AnimatedImageDecoder加载webp动图，且仅能在Android P+使用
+Glide中存在AnimatedWebpDecoder/AnimatedImageDecoder加载webp动图，且仅能在Android P+使用，那么低于P以下使用gif播放，高于P以上版本使用webp播放
 
 ## Android's FrameSequence vs. Glide's GifDrawable
 
