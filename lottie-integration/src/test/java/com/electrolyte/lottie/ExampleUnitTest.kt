@@ -1,4 +1,4 @@
-package com.jamesfchen.spacecraftplugin
+package com.electrolyte.lottie
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package com.jamesfchen.animationdrawableintegration
+package com.electrolye.animated
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.jamesfchen.animationdrawableintegration.R
-import com.jamesfchen.animationdrawableintegration.databinding.FragmentFirstBinding
+import com.electrolye.animated.R
+import com.electrolye.animated.databinding.FragmentFirstBinding
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.

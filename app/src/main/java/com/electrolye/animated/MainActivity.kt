@@ -1,4 +1,4 @@
-package com.jamesfchen.animationdrawableintegration
+package com.electrolye.animated
 
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
@@ -11,7 +11,7 @@ import android.view.Menu
 import android.view.MenuItem
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.FitCenter
-import com.jamesfchen.animationdrawableintegration.databinding.ActivityMainBinding
+import com.electrolye.animated.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
-        G.with(this)
+        Glide.with(this)
 //            .asFrameSequence()
             .load(R.raw.fire)
 //            .transform(FitCenter())

@@ -2,7 +2,7 @@ plugins {
     id("com.android.library")
     kotlin("android")
     kotlin("kapt")
-//    id("com.google.devtools.ksp")
+    id("com.google.devtools.ksp")
 }
 val COMPILE_SDK_VERSION: String by project.rootProject
 val BUILD_TOOLS_VERSION: String by project.rootProject
@@ -13,11 +13,9 @@ val GLIDE_VERSION: String by project.rootProject
 android {
     namespace = "com.electrolye.framesequence"
     compileSdk = COMPILE_SDK_VERSION.toInt()
-    buildToolsVersion = BUILD_TOOLS_VERSION
 
     defaultConfig {
         minSdk = Integer.parseInt(MIN_SDK_VERSION)
-        targetSdk = Integer.parseInt(TARGET_SDK_VERSION)
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
         externalNativeBuild {
@@ -56,23 +54,20 @@ android {
             )
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
     ndkVersion = "22.0.7026061"
     externalNativeBuild {
         cmake {
             path = file("CMakeLists.txt")
         }
     }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
 }
 
 dependencies {
     api("com.github.bumptech.glide:glide:${GLIDE_VERSION}")
-    kapt("com.github.bumptech.glide:compiler:${GLIDE_VERSION}")
-//    ksp("com.github.bumptech.glide:ksp:${GLIDE_VERSION}")
+//    kapt("com.github.bumptech.glide:compiler:${GLIDE_VERSION}")
+    ksp("com.github.bumptech.glide:ksp:${GLIDE_VERSION}")
 }

@@ -1,10 +1,8 @@
-import com.android.builder.signing.DefaultSigningConfig.Companion.debugSigningConfig
-
 plugins {
     id("com.android.application")
     kotlin("android")
     kotlin("kapt")
-//    id("com.google.devtools.ksp")
+    id("com.google.devtools.ksp")
 }
 val COMPILE_SDK_VERSION: String by project.rootProject
 val BUILD_TOOLS_VERSION: String by project.rootProject
@@ -16,11 +14,11 @@ val KEY_PASSWORD: String by project.rootProject
 val STORE_PASSWORD: String by project.rootProject
 val STORE_FILEPATH: String by project.rootProject
 android {
+    namespace = "com.electrolye.animated"
     compileSdk = COMPILE_SDK_VERSION.toInt()
-    buildToolsVersion = BUILD_TOOLS_VERSION
 
     defaultConfig {
-        applicationId = "com.jamesfchen.animationdrawableintegration"
+        applicationId = "com.electrolye.animated"
         minSdk = Integer.parseInt(MIN_SDK_VERSION)
         targetSdk = Integer.parseInt(TARGET_SDK_VERSION)
         versionCode = 1
@@ -48,17 +46,9 @@ android {
 //            ...
 //        }
     }
-    configure<JavaPluginConvention> {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
     buildFeatures {
         viewBinding = true
     }
-
 
 //    flavorDimensions += listOf("tier")
 //    productFlavors {
@@ -72,11 +62,16 @@ android {
 //            applicationId = "com.example.myapp.paid"
 //        }
 //    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
 }
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(project(":framesequence-integration"))
+    implementation(project(":lottie-integration"))
     implementation("androidx.core:core-ktx:1.5.0")
     implementation("androidx.appcompat:appcompat:1.3.0")
     implementation("com.google.android.material:material:1.3.0")
@@ -86,6 +81,6 @@ dependencies {
     testImplementation("junit:junit:4.+")
     androidTestImplementation("androidx.test.ext:junit:1.1.2")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.3.0")
-    kapt("com.github.bumptech.glide:compiler:${GLIDE_VERSION}")
-//    ksp("com.github.bumptech.glide:ksp:${GLIDE_VERSION}")
+//    kapt("com.github.bumptech.glide:compiler:${GLIDE_VERSION}")
+    ksp("com.github.bumptech.glide:ksp:${GLIDE_VERSION}")
 }

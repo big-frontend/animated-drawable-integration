@@ -1,4 +1,4 @@
-package com.jamesfchen.animationdrawableintegration;
+package com.electrolye.animated;
 
 import android.app.Activity;
 import android.os.Bundle;
