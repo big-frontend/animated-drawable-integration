@@ -1,6 +1,8 @@
-## 动图优化
+# 动图优化
 
-Glide中存在加载webp和avif动图AnimatedWebpDecoder/AnimatedImageDecoder类，webp在Android P +支持，avif在Android S+，那么低于P以下使用gif播放，高于P以上版本使用webp播放
+Glide中存在加载webp和avif动图AnimatedWebpDecoder/AnimatedImageDecoder类，webp在Android P +支持，avif在Android S+，那么低于P以下我们可以使用gif或者lottie播放
+
+# GIF
 
 ## Android's FrameSequence vs. Glide's GifDrawable
 
@@ -24,4 +26,6 @@ webp动图 |不支持|不支持
 - 并行渲染：FrameSequenceDrawable在其他线程解码数据，在主线程绘制数据
 - FrameSequenceDrawable永远只会使用两个Bitmap(frontBitmap和backBitmap)，frontBitmap用于给屏幕渲染，backBitmap用于存放解码数据，在绘制下一帧的时候swap两个Bitmap，不会产生多余的Bitmap 
 
+# Lottie
 
+lottie比起gif体积更小
