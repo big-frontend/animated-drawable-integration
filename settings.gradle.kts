@@ -28,6 +28,8 @@ dependencyResolutionManagement {
     }
 }
 include(":app")
-include(":framesequence-integration")
-include(":lottie-integration")
-include(":pag-integration")
+include(":glide-framesequence-integration")
+include(":glide-lottie-integration")
+include(":glide-pag-integration")
+include(":fresco-animated-pag")
+include(":fresco-animated-lottie")

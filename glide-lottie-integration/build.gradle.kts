@@ -42,8 +42,8 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    api("com.github.bumptech.glide:glide:${GLIDE_VERSION}")
-    annotationProcessor("com.github.bumptech.glide:compiler:${GLIDE_VERSION}")
-    ksp("com.github.bumptech.glide:ksp:${GLIDE_VERSION}")
+    compileOnly(libs.glide.core)
+    ksp(libs.glide.ksp)
+    annotationProcessor(libs.glide.compiler)
     api("com.airbnb.android:lottie:3.4.0")
 }

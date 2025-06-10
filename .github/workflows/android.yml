@@ -23,7 +23,7 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
 
-  build-framesequence-integration:
+  glide--framesequence-integration:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -37,15 +37,15 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build with Gradle
-        run: ./gradlew framesequence-integration:assembleRelease
+        run: ./gradlew glide-framesequence-integration:assembleRelease
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: framesequence-integration.aar
-          path: framesequence-integration/build/outputs/aar/*.aar
+          name: glide-framesequence-integration.aar
+          path: glide-framesequence-integration/build/outputs/aar/*.aar
 
-  build-lottie-integration:
+  glide-lottie-integration:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -59,14 +59,14 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build with Gradle
-        run: ./gradlew lottie-integration:assembleRelease
+        run: ./gradlew glide-lottie-integration:assembleRelease
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: lottie-integration.aar
-          path: lottie-integration/build/outputs/aar/*.aar
-  build-pag-integration:
+          name: glide-lottie-integration.aar
+          path: glide-lottie-integration/build/outputs/aar/*.aar
+  glide-pag-integration:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -80,10 +80,10 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build with Gradle
-        run: ./gradlew pag-integration:assembleRelease
+        run: ./gradlew glide-pag-integration:assembleRelease
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: pag-integration.aar
-          path: pag-integration/build/outputs/aar/*.aar
+          name: glide-pag-integration.aar
+          path: glide-pag-integration/build/outputs/aar/*.aar

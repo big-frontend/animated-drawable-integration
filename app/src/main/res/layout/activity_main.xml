@@ -41,6 +41,14 @@
         app:lottie_fileName="17902-covid19.json"
         app:lottie_loop="true" />
 
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/iv_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom|start"
+        android:layout_marginStart="160dp"
+        android:layout_marginBottom="160dp" />
+
     <ImageView
         android:id="@+id/iv"
         android:layout_width="80dp"

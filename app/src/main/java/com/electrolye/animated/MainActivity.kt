@@ -51,6 +51,8 @@ class MainActivity : AppCompatActivity() {
             .load("file:///android_asset/17902-covid19.json")
 //            .transform(FitCenter())
             .into(binding.iv3)
+
+        binding.ivImage.loadUrl("https://test-sc.seeyouyima.com/eimg/adimg/2022/6/62ac2bbfa17b1_640_300.gif")
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

@@ -67,7 +67,7 @@ android {
 }
 
 dependencies {
-    api("com.github.bumptech.glide:glide:${GLIDE_VERSION}")
-//    kapt("com.github.bumptech.glide:compiler:${GLIDE_VERSION}")
-    ksp("com.github.bumptech.glide:ksp:${GLIDE_VERSION}")
+    compileOnly(libs.glide.core)
+    ksp(libs.glide.ksp)
+    annotationProcessor(libs.glide.compiler)
 }
