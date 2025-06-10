@@ -43,5 +43,7 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     compileOnly(libs.fresco)
+    compileOnly(libs.fresco.animated.base)
+    compileOnly(libs.fresco.animated.drawable)
     api("com.tencent.tav:libpag:4.2.100")
 }

@@ -201,6 +201,7 @@ coil-svg = { group = "io.coil-kt", name = "coil-svg", version.ref = "coil" }
 fresco = { module = "com.facebook.fresco:fresco", version.ref = "fresco" }
 fresco-webp = { module = "com.facebook.fresco:webpsupport", version.ref = "fresco" }
 fresco-animated-base = { module = "com.facebook.fresco:animated-base", version.ref = "fresco" }
+fresco-animated-drawable = { module = "com.facebook.fresco:animated-drawable", version.ref = "fresco" }
 fresco-animated-gif = { module = "com.facebook.fresco:animated-gif", version.ref = "fresco" }
 fresco-animated-webp = { module = "com.facebook.fresco:animated-webp", version.ref = "fresco" }
 fresco-okhttp3 = { module = "com.facebook.fresco:imagepipeline-okhttp3", version.ref = "fresco" }

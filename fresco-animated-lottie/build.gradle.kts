@@ -44,4 +44,5 @@ dependencies {
 
     compileOnly(libs.fresco)
     compileOnly(libs.fresco.animated.base)
+    compileOnly(libs.fresco.animated.drawable)
 }
