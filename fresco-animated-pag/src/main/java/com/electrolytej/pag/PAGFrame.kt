@@ -1,9 +1,9 @@
-package com.electrolyte.lottie
+package com.electrolytej.pag
 
 import android.graphics.Bitmap
 import com.facebook.imagepipeline.animated.base.AnimatedImageFrame
 
-class LottieFrame : AnimatedImageFrame {
+class PAGFrame : AnimatedImageFrame {
     override fun dispose() {
 
     }
