@@ -7,16 +7,14 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
-
+  build-app:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
-    - name: set up JDK 11
+    - name: set up JDK 17
       uses: actions/setup-java@v3
       with:
-        java-version: '11'
+        java-version: '17'
         distribution: 'temurin'
         cache: gradle
 
@@ -24,3 +22,68 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
+
+    build-framesequence-integration:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - name: set up JDK 17
+          uses: actions/setup-java@v3
+          with:
+            java-version: '17'
+            distribution: 'temurin'
+            cache: gradle
+
+        - name: Grant execute permission for gradlew
+          run: chmod +x gradlew
+        - name: Build with Gradle
+          run: ./gradlew framesequence-integration:assembleRelease
+
+        - name: Upload APK
+          uses: actions/upload-artifact@v4
+          with:
+            name: framesequence-integration.aar
+            path: framesequence-integration/build/outputs/aar/*.aar
+
+    build-lottie-integration:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - name: set up JDK 17
+          uses: actions/setup-java@v3
+          with:
+            java-version: '17'
+            distribution: 'temurin'
+            cache: gradle
+
+        - name: Grant execute permission for gradlew
+          run: chmod +x gradlew
+        - name: Build with Gradle
+          run: ./gradlew lottie-integration:assembleRelease
+
+        - name: Upload APK
+          uses: actions/upload-artifact@v4
+          with:
+            name: lottie-integration.aar
+            path: lottie-integration/build/outputs/aar/*.aar
+    build-pag-integration:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - name: set up JDK 17
+          uses: actions/setup-java@v3
+          with:
+            java-version: '17'
+            distribution: 'temurin'
+            cache: gradle
+
+        - name: Grant execute permission for gradlew
+          run: chmod +x gradlew
+        - name: Build with Gradle
+          run: ./gradlew pag-integration:assembleRelease
+
+        - name: Upload APK
+          uses: actions/upload-artifact@v4
+          with:
+            name: pag-integration.aar
+            path: pag-integration/build/outputs/aar/*.aar
