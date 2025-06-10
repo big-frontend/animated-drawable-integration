@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
 //            .transform(FitCenter())
             .into(binding.iv)
         Glide.with(this)
-            .load(R.raw.b)
+            .load("file:///android_asset/b.pag")
 //            .transform(FitCenter())
             .into(binding.iv2)
 
