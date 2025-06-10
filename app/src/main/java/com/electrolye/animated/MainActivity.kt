@@ -1,6 +1,7 @@
 package com.electrolye.animated
 
 import android.os.Bundle
+import android.util.Log
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -9,6 +10,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import com.airbnb.lottie.LottieCompositionFactory
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.FitCenter
 import com.electrolye.animated.databinding.ActivityMainBinding
@@ -36,11 +38,19 @@ class MainActivity : AppCompatActivity() {
         }
         Glide.with(this)
 //            .asFrameSequence()
-            .load(R.raw.fire)
+//            .load(R.raw.fire)
+            .load("https://test-sc.seeyouyima.com/eimg/adimg/2022/6/62ac2bbfa17b1_640_300.gif")
 //            .transform(FitCenter())
             .into(binding.iv)
+        Glide.with(this)
+            .load(R.raw.b)
+//            .transform(FitCenter())
+            .into(binding.iv2)
 
-
+        Glide.with(this)
+            .load("file:///android_asset/17902-covid19.json")
+//            .transform(FitCenter())
+            .into(binding.iv3)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

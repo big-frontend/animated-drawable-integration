@@ -31,6 +31,16 @@
         android:layout_marginBottom="16dp"
         app:srcCompat="@android:drawable/ic_dialog_email" />
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lav"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom|start"
+        android:layout_marginBottom="160dp"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="17902-covid19.json"
+        app:lottie_loop="true" />
+
     <ImageView
         android:id="@+id/iv"
         android:layout_width="80dp"
@@ -39,5 +49,19 @@
         android:layout_marginStart="@dimen/fab_margin"
         android:layout_marginBottom="16dp" />
 
+    <ImageView
+        android:id="@+id/iv2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="160dp"
+        android:layout_marginBottom="16dp" />
 
+    <ImageView
+        android:id="@+id/iv3"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom|center"
+        android:layout_marginStart="160dp"
+        android:layout_marginBottom="16dp" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -30,3 +30,4 @@ dependencyResolutionManagement {
 include(":app")
 include(":framesequence-integration")
 include(":lottie-integration")
+include(":pag-integration")

@@ -8,7 +8,7 @@ val COMPILE_SDK_VERSION: String by project.rootProject
 val MIN_SDK_VERSION: String by project.rootProject
 val GLIDE_VERSION: String by project.rootProject
 android {
-    namespace = "com.electrolyte.lottie"
+    namespace = "com.electrolytej.pag"
     compileSdk = COMPILE_SDK_VERSION.toInt()
 
     defaultConfig {
@@ -31,10 +31,12 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+    kotlinOptions {
+        jvmTarget = "11"
+    }
 }
 
 dependencies {
-
     implementation("androidx.core:core-ktx:1.12.0")
     implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -44,6 +46,7 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     api("com.github.bumptech.glide:glide:${GLIDE_VERSION}")
     annotationProcessor("com.github.bumptech.glide:compiler:${GLIDE_VERSION}")
+//    kapt("com.github.bumptech.glide:compiler:${GLIDE_VERSION}")
     ksp("com.github.bumptech.glide:ksp:${GLIDE_VERSION}")
-    api("com.airbnb.android:lottie:3.4.0")
+    api("com.tencent.tav:libpag:4.2.100")
 }

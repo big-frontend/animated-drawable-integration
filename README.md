@@ -29,3 +29,6 @@ webp动图 |不支持|不支持
 # Lottie
 
 lottie比起gif体积更小
+
+# Pag
+腾讯 pag
