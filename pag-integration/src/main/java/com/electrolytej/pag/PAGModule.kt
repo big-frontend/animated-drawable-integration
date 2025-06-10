@@ -8,13 +8,15 @@ import com.bumptech.glide.module.LibraryGlideModule
 import java.io.InputStream
 
 @GlideModule
-class PagModule : LibraryGlideModule() {
+class PAGModule : LibraryGlideModule() {
     override fun registerComponents(context: Context, glide: Glide, registry: Registry) {
         registry.prepend(
             Registry.BUCKET_ANIMATION,
             InputStream::class.java,
-            PagDrawable::class.java,
-            StreamPagDecoder(registry.imageHeaderParsers, glide.bitmapPool, glide.arrayPool)
+            PAGDrawable::class.java,
+            StreamPagDecoder(
+                context,
+                registry.imageHeaderParsers, glide.bitmapPool, glide.arrayPool)
         )
     }
 }
