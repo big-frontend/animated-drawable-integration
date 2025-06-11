@@ -1,4 +1,4 @@
-package com.electrolyte.lottie
+package com.electrolytej.lottie
 
 import android.annotation.SuppressLint
 import android.content.Context

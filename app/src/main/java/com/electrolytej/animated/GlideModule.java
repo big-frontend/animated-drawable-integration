@@ -1,4 +1,4 @@
-package com.electrolye.animated;
+package com.electrolytej.animated;
 
 
 import android.content.Context;

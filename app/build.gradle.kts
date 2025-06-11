@@ -8,13 +8,12 @@ val COMPILE_SDK_VERSION: String by project.rootProject
 val BUILD_TOOLS_VERSION: String by project.rootProject
 val MIN_SDK_VERSION: String by project.rootProject
 val TARGET_SDK_VERSION: String by project.rootProject
-val GLIDE_VERSION: String by project.rootProject
 val KEY_ALIAS: String by project.rootProject
 val KEY_PASSWORD: String by project.rootProject
 val STORE_PASSWORD: String by project.rootProject
 val STORE_FILEPATH: String by project.rootProject
 android {
-    namespace = "com.electrolye.animated"
+    namespace = "com.electrolytej.animated"
     compileSdk = COMPILE_SDK_VERSION.toInt()
 
     defaultConfig {
@@ -70,11 +69,6 @@ android {
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    implementation(project(":glide-framesequence-integration"))
-    implementation(project(":glide-lottie-integration"))
-    implementation(project(":glide-pag-integration"))
-    implementation(project(":fresco-animated-lottie"))
-    implementation(project(":fresco-animated-pag"))
     implementation("androidx.core:core-ktx:1.5.0")
     implementation("androidx.appcompat:appcompat:1.3.0")
     implementation("com.google.android.material:material:1.3.0")
@@ -84,6 +78,12 @@ dependencies {
     testImplementation("junit:junit:4.+")
     androidTestImplementation("androidx.test.ext:junit:1.1.2")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.3.0")
+    implementation(project(":glide-framesequence-integration"))
+    implementation(project(":glide-lottie-integration"))
+    implementation(project(":glide-pag-integration"))
+    implementation(project(":glide-svg-integration"))
+    implementation(project(":fresco-animated-lottie"))
+    implementation(project(":fresco-animated-pag"))
     api(libs.glide.core)
     api(libs.glide.recyclerview)
     api(libs.glide.okhttp3)

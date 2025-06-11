@@ -1,4 +1,4 @@
-package com.electrolyte.lottie
+package com.electrolytej.lottie
 
 import android.graphics.Bitmap
 import com.facebook.imagepipeline.animated.base.AnimatedImageFrame

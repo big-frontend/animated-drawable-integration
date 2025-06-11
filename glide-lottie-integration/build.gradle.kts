@@ -6,9 +6,8 @@ plugins {
 }
 val COMPILE_SDK_VERSION: String by project.rootProject
 val MIN_SDK_VERSION: String by project.rootProject
-val GLIDE_VERSION: String by project.rootProject
 android {
-    namespace = "com.electrolyte.lottie"
+    namespace = "com.electrolytej.glide.lottie"
     compileSdk = COMPILE_SDK_VERSION.toInt()
 
     defaultConfig {
@@ -34,15 +33,12 @@ android {
 }
 
 dependencies {
-
-    implementation("androidx.core:core-ktx:1.12.0")
     implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.11.0")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    compileOnly(libs.glide.core)
+    api(libs.glide.core)
+//    compileOnly(libs.glide.core)
     ksp(libs.glide.ksp)
     annotationProcessor(libs.glide.compiler)
     api("com.airbnb.android:lottie:3.4.0")

@@ -1,7 +1,6 @@
-package com.electrolye.animated
+package com.electrolytej.animated
 
 import android.os.Bundle
-import android.util.Log
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -10,9 +9,8 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
-import com.airbnb.lottie.LottieCompositionFactory
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.FitCenter
+import com.electrolye.animated.R
 import com.electrolye.animated.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -36,6 +34,7 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
+        binding.ivImage.loadUrl("https://test-sc.seeyouyima.com/eimg/adimg/2022/6/62ac2bbfa17b1_640_300.gif")
         Glide.with(this)
 //            .asFrameSequence()
 //            .load(R.raw.fire)
@@ -45,14 +44,19 @@ class MainActivity : AppCompatActivity() {
         Glide.with(this)
             .load("file:///android_asset/b.pag")
 //            .transform(FitCenter())
-            .into(binding.iv2)
+            .into(binding.ivPag)
 
         Glide.with(this)
             .load("file:///android_asset/17902-covid19.json")
 //            .transform(FitCenter())
-            .into(binding.iv3)
+            .into(binding.ivLottie)
 
-        binding.ivImage.loadUrl("https://test-sc.seeyouyima.com/eimg/adimg/2022/6/62ac2bbfa17b1_640_300.gif")
+        Glide.with(this)
+            .load(R.raw.android_toy_h)
+//            .transform(FitCenter())
+            .into(binding.ivSvg)
+
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

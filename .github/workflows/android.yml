@@ -23,7 +23,7 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
 
-  glide--framesequence-integration:
+  glide-framesequence-integration:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -80,10 +80,10 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build with Gradle
-        run: ./gradlew glide-pag-integration:assembleRelease
+        run: ./gradlew glide-svg-integration:assembleRelease
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: glide-pag-integration.aar
-          path: glide-pag-integration/build/outputs/aar/*.aar
+          name: glide-svg-integration.aar
+          path: glide-svg-integration/build/outputs/aar/*.aar

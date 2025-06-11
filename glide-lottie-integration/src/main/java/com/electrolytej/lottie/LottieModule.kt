@@ -1,4 +1,4 @@
-package com.electrolyte.lottie
+package com.electrolytej.lottie
 
 import android.content.Context
 import com.airbnb.lottie.LottieDrawable

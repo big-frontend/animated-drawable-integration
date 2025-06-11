@@ -6,9 +6,8 @@ plugins {
 }
 val COMPILE_SDK_VERSION: String by project.rootProject
 val MIN_SDK_VERSION: String by project.rootProject
-val GLIDE_VERSION: String by project.rootProject
 android {
-    namespace = "com.electrolyte.lottie"
+    namespace = "com.electrolytej.fresco.lottie"
     compileSdk = COMPILE_SDK_VERSION.toInt()
 
     defaultConfig {
