@@ -17,7 +17,7 @@ android {
     compileSdk = COMPILE_SDK_VERSION.toInt()
 
     defaultConfig {
-        applicationId = "com.electrolye.animated"
+        applicationId = "com.electrolytej.animated"
         minSdk = Integer.parseInt(MIN_SDK_VERSION)
         targetSdk = Integer.parseInt(TARGET_SDK_VERSION)
         versionCode = 1

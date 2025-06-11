@@ -1,4 +1,4 @@
-package com.electrolye.framesequence
+package com.electrolytej.framesequence
 
 import android.rastermill.FrameSequenceDrawable
 import com.bumptech.glide.RequestBuilder

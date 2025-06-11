@@ -1,4 +1,4 @@
-package com.electrolye.framesequence
+package com.electrolytej.framesequence
 
 import android.content.Context
 import android.rastermill.FrameSequenceDrawable

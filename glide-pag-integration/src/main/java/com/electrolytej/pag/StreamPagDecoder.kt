@@ -38,7 +38,8 @@ class StreamPagDecoder(
         val pagFile = PAGFile.Load(source.readBytes())
 //        val pagFile = PAGFile.Load(context.getAssets(), "alpha.pag")
 
-        return PAGDrawableResource(PAGDrawable())
+//        return PAGDrawableResource(PAGDrawable())
+        return null
     }
 
     class PAGDrawableResource(drawable: PAGDrawable) : DrawableResource<PAGDrawable>(drawable) {

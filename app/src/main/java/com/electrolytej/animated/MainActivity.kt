@@ -10,8 +10,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import com.bumptech.glide.Glide
-import com.electrolye.animated.R
-import com.electrolye.animated.databinding.ActivityMainBinding
+import com.electrolytej.animated.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 

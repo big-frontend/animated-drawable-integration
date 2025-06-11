@@ -1,4 +1,4 @@
-package com.electrolye.framesequence
+package com.electrolytej.framesequence
 
 import android.content.Context
 import android.rastermill.FrameSequence
@@ -30,9 +30,9 @@ class ByteBufferFrameSequenceDecoder(
     override fun decode(
         source: ByteBuffer, width: Int, height: Int, options: Options
     ): Resource<FrameSequenceDrawable>? {
+        Log.d("FrameSeqDecoder","decode")
         val frameSequence = FrameSequence.decodeByteBuffer(source)
         val drawable = FrameSequenceDrawable(frameSequence)
-        Log.d("FrameSeqDecoder","decode")
         return FrameSequenceDrawableResource(drawable)
     }
 
