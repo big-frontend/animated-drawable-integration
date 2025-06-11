@@ -6,7 +6,7 @@ import android.graphics.PixelFormat
 import android.graphics.drawable.Animatable
 import android.graphics.drawable.Drawable
 
-class PAGDrawable : Drawable(), Animatable, Runnable {
+class PagDrawable : Drawable(), Animatable, Runnable {
     override fun draw(p0: Canvas) {
 
     }

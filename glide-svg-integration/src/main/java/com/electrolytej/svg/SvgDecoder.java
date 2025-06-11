@@ -2,6 +2,8 @@ package com.electrolytej.svg;
 
 import static com.bumptech.glide.request.target.Target.SIZE_ORIGINAL;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import com.bumptech.glide.load.Options;
@@ -26,6 +28,7 @@ public class SvgDecoder implements ResourceDecoder<InputStream, SVG> {
   public Resource<SVG> decode(
       @NonNull InputStream source, int width, int height, @NonNull Options options)
       throws IOException {
+    Log.d("SvgDecoder", "decode");
     try {
       SVG svg = SVG.getFromInputStream(source);
       if (width != SIZE_ORIGINAL) {

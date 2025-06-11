@@ -1,5 +1,6 @@
 package com.electrolytej.animated
 
+import android.graphics.drawable.PictureDrawable
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
@@ -9,8 +10,12 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import com.airbnb.lottie.LottieDrawable
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade
 import com.electrolytej.animated.databinding.ActivityMainBinding
+import com.electrolytej.pag.PagDrawable
+import com.electrolytej.svg.SvgSoftwareLayerSetter
 
 class MainActivity : AppCompatActivity() {
 
@@ -41,18 +46,23 @@ class MainActivity : AppCompatActivity() {
 //            .transform(FitCenter())
             .into(binding.iv)
         Glide.with(this)
+//            .`as`(PagDrawable::class.java)
             .load("file:///android_asset/b.pag")
 //            .transform(FitCenter())
             .into(binding.ivPag)
 
         Glide.with(this)
+            .`as`(LottieDrawable::class.java)
             .load("file:///android_asset/17902-covid19.json")
 //            .transform(FitCenter())
             .into(binding.ivLottie)
 
         Glide.with(this)
-            .load(R.raw.android_toy_h)
+            .`as`(PictureDrawable::class.java)
 //            .transform(FitCenter())
+//            .transition(withCrossFade())
+            .listener(SvgSoftwareLayerSetter())
+            .load(R.raw.android_toy_h)
             .into(binding.ivSvg)
 
 

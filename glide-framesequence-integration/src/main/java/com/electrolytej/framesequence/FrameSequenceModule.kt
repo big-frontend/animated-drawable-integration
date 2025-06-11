@@ -28,7 +28,6 @@ class FrameSequenceModule : LibraryGlideModule() {
                 InputStream::class.java,
                 FrameSequenceDrawable::class.java,
                 StreamFrameSequenceDecoder(registry.imageHeaderParsers, byteBufferFrameSequenceDecoder, glide.arrayPool)
-
             ).prepend(
                 Registry.BUCKET_ANIMATION,
                 ByteBuffer::class.java,

@@ -2,6 +2,7 @@ package com.electrolytej.svg;
 
 import android.graphics.Picture;
 import android.graphics.drawable.PictureDrawable;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,6 +21,7 @@ public class SvgDrawableTranscoder implements ResourceTranscoder<SVG, PictureDra
   @Override
   public Resource<PictureDrawable> transcode(
       @NonNull Resource<SVG> toTranscode, @NonNull Options options) {
+    Log.d("SvgDecoder", "transcode");
     SVG svg = toTranscode.get();
     Picture picture = svg.renderToPicture();
     PictureDrawable drawable = new PictureDrawable(picture);
