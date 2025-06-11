@@ -27,26 +27,6 @@ import java.security.MessageDigest
  */
 class LottieImage() :AnimatedImage, AnimatedImageDecoder {
 
-    @SuppressLint("RestrictedApi")
-//    override fun decode(
-//        encodedImage: EncodedImage,
-//        length: Int,
-//        qualityInfo: QualityInfo,
-//        options: ImageDecodeOptions
-//    ): CloseableImage? {
-//        Log.d("LottieDecoder", "decode")
-//        val source = encodedImage.getInputStream() ?: return null
-//        val cacheKey = cachedKey(source)
-//        val jsonReader = JsonReader.of(Okio.buffer(Okio.source(source)))
-//        val lottieResult = LottieCompositionFactory.fromJsonReaderSync(jsonReader, cacheKey)
-//        if (lottieResult?.value != null) {
-//            val lottieDrawable = LottieDrawable()
-//            lottieDrawable.setComposition(lottieResult.value)
-//            lottieDrawable.repeatCount = LottieDrawable.INFINITE
-//        }
-//        return null
-//    }
-
     private fun cachedKey(source: InputStream): String? {
         try {
             val length = source.available()
