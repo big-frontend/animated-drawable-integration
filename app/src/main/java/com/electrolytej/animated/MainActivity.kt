@@ -1,21 +1,30 @@
 package com.electrolytej.animated
 
+import android.graphics.Bitmap
 import android.graphics.drawable.PictureDrawable
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
+import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import android.view.Menu
-import android.view.MenuItem
 import com.airbnb.lottie.LottieDrawable
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade
+import com.bumptech.glide.load.DataSource
+import com.bumptech.glide.load.engine.GlideException
+import com.bumptech.glide.load.resource.gif.GifDrawable
+import com.bumptech.glide.request.RequestListener
+import com.bumptech.glide.request.target.Target
 import com.electrolytej.animated.databinding.ActivityMainBinding
-import com.electrolytej.pag.PagDrawable
 import com.electrolytej.svg.SvgSoftwareLayerSetter
+import com.facebook.animated.gif.GifFrame
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,34 +47,13 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
-        binding.ivImage.loadUrl("https://test-sc.seeyouyima.com/eimg/adimg/2022/6/62ac2bbfa17b1_640_300.gif")
-        Glide.with(this)
-//            .asFrameSequence()
-//            .load(R.raw.fire)
-            .load("https://test-sc.seeyouyima.com/eimg/adimg/2022/6/62ac2bbfa17b1_640_300.gif")
-//            .transform(FitCenter())
-            .into(binding.iv)
-        Glide.with(this)
-//            .`as`(PagDrawable::class.java)
-            .load("file:///android_asset/b.pag")
-//            .transform(FitCenter())
-            .into(binding.ivPag)
-
-        Glide.with(this)
-            .`as`(LottieDrawable::class.java)
-            .load("file:///android_asset/17902-covid19.json")
-//            .transform(FitCenter())
-            .into(binding.ivLottie)
-
-        Glide.with(this)
-            .`as`(PictureDrawable::class.java)
-//            .transform(FitCenter())
-//            .transition(withCrossFade())
-            .listener(SvgSoftwareLayerSetter())
-            .load(R.raw.android_toy_h)
-            .into(binding.ivSvg)
-
-
+        loadAvif()
+        loadHeif()
+        loadSvg()
+        loadGif()
+        loadPag()
+        loadLottie()
+        loadApng()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -88,5 +76,139 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
+    }
+
+    fun onGlideGif(view: View) {}
+    fun onGlidePag(view: View) {}
+    fun onGlideLottie(view: View) {}
+    fun onGlideSvg(view: View) {}
+    fun onGlideHeic(view: View) {}
+    fun onFrescoHeic(view: View) {}
+
+    fun loadAvif() {
+        binding.ivAvifFresco.loadAvif("asset:///abandoned_filmgrain.avif")
+        Glide.with(this)
+//            .`as`(PagDrawable::class.java)
+            .load("file:///android_asset/abandoned_filmgrain.avif")
+            .into(binding.ivAvifGlide)
+    }
+
+    fun loadHeif() {
+        binding.ivHeicFresco.loadUrl("asset:///example.heic")
+        Glide.with(this)
+//            .transform(FitCenter())
+//            .transition(withCrossFade())
+            .load("file:///android_asset/example.heic")
+            .into(binding.ivHeicGlide)
+    }
+
+    fun loadSvg() {
+        Glide.with(this)
+            .`as`(PictureDrawable::class.java)
+//            .transform(FitCenter())
+//            .transition(withCrossFade())
+            .listener(SvgSoftwareLayerSetter())
+            .load(R.raw.android_toy_h)
+            .into(binding.ivSvgGlide)
+    }
+
+    fun loadGif() {
+        binding.ivGifFresco.loadUrl("asset:///car.gif")
+        Glide.with(this)
+            .asGif()
+            .load(R.raw.car)
+            .addListener(object : RequestListener<GifDrawable> {
+                override fun onLoadFailed(
+                    e: GlideException?,
+                    model: Any?,
+                    target: Target<GifDrawable>,
+                    isFirstResource: Boolean
+                ): Boolean {
+                    return false
+                }
+
+                override fun onResourceReady(
+                    resource: GifDrawable,
+                    model: Any,
+                    target: Target<GifDrawable>?,
+                    dataSource: DataSource,
+                    isFirstResource: Boolean
+                ): Boolean {
+                    if (isFirstResource) {
+                        val iv = ImageView(this@MainActivity)
+                        val first = resource.firstFrame
+                        iv.setImageBitmap(Bitmap.createBitmap(first))
+                        binding.fbl.addView(iv, ViewGroup.LayoutParams(240, 240))
+                    }
+                    return false
+                }
+
+            })
+            .into(binding.ivGifGlide)
+//        Glide.with(this)
+////            .asFrameSequence()
+//            .`as`(FrameSequenceDrawable::class.java)
+////            .transform(FitCenter())
+////            .load(R.raw.fire)
+////            .load("file:///android_asset/car.gif")
+//            .load("https://test-sc.seeyouyima.com/eimg/adimg/2022/6/62ac2bbfa17b1_640_300.gif")
+//            .addListener(object :RequestListener<FrameSequenceDrawable>{
+//                override fun onLoadFailed(
+//                    e: GlideException?,
+//                    model: Any?,
+//                    target: Target<FrameSequenceDrawable>,
+//                    isFirstResource: Boolean
+//                ): Boolean {
+//                    Log.d("cjf","onLoadFailed:${isFirstResource} ")
+//                    return false
+//                }
+//                override fun onResourceReady(
+//                    resource: FrameSequenceDrawable,
+//                    model: Any,
+//                    target: Target<FrameSequenceDrawable>?,
+//                    dataSource: DataSource,
+//                    isFirstResource: Boolean
+//                ): Boolean {
+//                    Log.d("cjf","onResourceReady:${isFirstResource} ${resource}")
+//                    val iv = ImageView(this@MainActivity)
+//                    iv.setImageDrawable(resource)
+//                    binding.fbl.addView(iv, ViewGroup.LayoutParams(240,240))
+//                    if (isFirstResource){
+//                    }
+//                    return false
+//                }
+//
+//            })
+//            .into(binding.ivGifGlide)
+    }
+
+    fun loadPag() {
+        binding.ivPagFresco.loadPag("asset:///b.pag")
+        Glide.with(this)
+//            .`as`(PagDrawable::class.java)
+//            .load("file:///android_asset/abandoned_filmgrain.avif")
+            .load("file:///android_asset/b.pag")
+//            .transform(FitCenter())
+            .into(binding.ivPagGlide)
+    }
+
+    fun loadLottie() {
+        //        binding.ivLottieFresco.loadAvif("asset:///abandoned_filmgrain.avif")
+        Glide.with(this)
+            .`as`(LottieDrawable::class.java)
+            .load("file:///android_asset/17902-covid19.json")
+//            .transform(FitCenter())
+            .into(binding.ivLottieGlide)
+    }
+
+    private fun loadApng() {
+        binding.ivApngFresco.loadApng("asset:///shake.png")
+        Glide.with(this)
+//            .`as`(PagDrawable::class.java)
+//            .load("file:///android_asset/abandoned_filmgrain.avif")
+            .load("file:///android_asset/shake.png")
+//            .load("file:///android_asset/b.pag")
+//            .transform(FitCenter())
+            .into(binding.ivApngGlide)
     }
 }

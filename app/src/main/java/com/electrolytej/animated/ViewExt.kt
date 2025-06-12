@@ -2,24 +2,29 @@ package com.electrolytej.animated
 
 import android.graphics.Bitmap
 import android.net.Uri
+import android.util.Log
 import androidx.annotation.Nullable
+import com.electrolytej.avif.AvifImageDecoder
 import com.facebook.common.executors.UiThreadImmediateExecutorService
 import com.facebook.common.references.CloseableReference
 import com.facebook.datasource.DataSource
 import com.facebook.drawee.backends.pipeline.Fresco
 import com.facebook.drawee.interfaces.DraweeController
 import com.facebook.drawee.view.SimpleDraweeView
+import com.facebook.imagepipeline.common.ImageDecodeOptions
 import com.facebook.imagepipeline.datasource.BaseBitmapDataSubscriber
 import com.facebook.imagepipeline.image.CloseableImage
 import com.facebook.imagepipeline.request.ImageRequestBuilder
+import androidx.core.net.toUri
 
-fun SimpleDraweeView?.loadUrl(url: String) {
+fun SimpleDraweeView?.loadUrl(url: String?) {
     if (url.isNullOrEmpty() || this == null) return
-    val gifUri = Uri.parse(url)
-    val request = ImageRequestBuilder.newBuilderWithSource(gifUri)
+    val request = ImageRequestBuilder.newBuilderWithSource(url.toUri())
+//        .setImageDecodeOptions(ImageDecodeOptions.newBuilder().setCustomImageDecoder(
+//            AvifImageDecoder()
+//        ).build())
         .build()
 
-    // 获取 GIF 数据源
     val dataSource: DataSource<CloseableReference<CloseableImage>> =
         Fresco.getImagePipeline().fetchDecodedImage(request, this)
 
@@ -83,5 +88,56 @@ fun SimpleDraweeView?.loadUrl(url: String) {
         .setImageRequest(request)
         .setAutoPlayAnimations(true) // 自动播放GIF
         .build()
+    setController(controller)
+}
+
+fun SimpleDraweeView?.loadAvif(url: String?) {
+    if (url.isNullOrEmpty() || this == null) return
+    val request =
+        ImageRequestBuilder
+            .newBuilderWithSource(url.toUri())
+            .setImageDecodeOptions(
+                ImageDecodeOptions.newBuilder().setCustomImageDecoder(
+                    AvifImageDecoder()
+                ).build()
+            )
+            .build()
+    val controller = Fresco.newDraweeControllerBuilder()
+        .setImageRequest(request).build()
+
+    setController(controller)
+}
+
+fun SimpleDraweeView?.loadPag(url: String?) {
+    if (url.isNullOrEmpty() || this == null) return
+    val request =
+        ImageRequestBuilder
+            .newBuilderWithSource(url.toUri())
+//            .setImageDecodeOptions(
+//                ImageDecodeOptions.newBuilder()
+//                    .setCustomImageDecoder(
+//                    PagImageDecoder()
+//                ).build()
+//            )
+            .build()
+    val controller = Fresco.newDraweeControllerBuilder()
+        .setImageRequest(request).build()
+    setController(controller)
+}
+
+fun SimpleDraweeView?.loadApng(url: String?) {
+    if (url.isNullOrEmpty() || this == null) return
+    val request =
+        ImageRequestBuilder
+            .newBuilderWithSource(url.toUri())
+//            .setImageDecodeOptions(
+//                ImageDecodeOptions.newBuilder().setCustomImageDecoder(
+//                    AvifImageDecoder()
+//                ).build()
+//            )
+            .build()
+    val controller = Fresco.newDraweeControllerBuilder()
+        .setImageRequest(request).build()
+
     setController(controller)
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.electrolye.animated.com.electrolytej.animated.MainActivity">
+    tools:context="com.electrolytej.animated.MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -31,53 +31,125 @@
         android:layout_marginBottom="16dp"
         app:srcCompat="@android:drawable/ic_dialog_email" />
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/lav"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_gravity="bottom|start"
-        android:layout_marginBottom="160dp"
-        app:lottie_autoPlay="true"
-        app:lottie_fileName="17902-covid19.json"
-        app:lottie_loop="true" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
 
-    <com.facebook.drawee.view.SimpleDraweeView
-        android:id="@+id/iv_image"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_gravity="bottom|start"
-        android:layout_marginStart="160dp"
-        android:layout_marginBottom="160dp" />
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:flexDirection="row"
+            app:flexWrap="wrap"
+            app:justifyContent="flex_start"
+            app:showDividerHorizontal="end">
 
-    <ImageView
-        android:id="@+id/iv_svg"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_gravity="bottom|center"
-        android:layout_marginStart="160dp"
-        android:layout_marginBottom="160dp" />
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/iv_avif_fresco"
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
 
-    <ImageView
-        android:id="@+id/iv"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_gravity="bottom|start"
-        android:layout_marginStart="@dimen/fab_margin"
-        android:layout_marginBottom="16dp" />
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/iv_heic_fresco"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:onClick="onFrescoHeic" />
 
-    <ImageView
-        android:id="@+id/iv_pag"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/iv_svg_fresco"
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/iv_gif_fresco"
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/iv_pag_fresco"
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/iv_lottie_fresco"
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/iv_apng_fresco"
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
+        </com.google.android.flexbox.FlexboxLayout>
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:flexDirection="row"
+            app:flexWrap="wrap"
+            app:justifyContent="flex_start"
+            app:showDividerHorizontal="end">
+
+            <ImageView
+                android:id="@+id/iv_avif_glide"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:onClick="onGlideHeic" />
+
+            <ImageView
+                android:id="@+id/iv_heic_glide"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:onClick="onGlideHeic" />
+
+            <ImageView
+                android:id="@+id/iv_svg_glide"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:onClick="onGlideSvg" />
+
+            <ImageView
+                android:id="@+id/iv_gif_glide"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:onClick="onGlideGif" />
+
+            <ImageView
+                android:id="@+id/iv_pag_glide"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:onClick="onGlidePag" />
+
+            <ImageView
+                android:id="@+id/iv_lottie_glide"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:onClick="onGlideLottie" />
+            <ImageView
+                android:id="@+id/iv_apng_glide"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:onClick="onGlideLottie" />
+        </com.google.android.flexbox.FlexboxLayout>
+    </LinearLayout>
+
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/fbl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:layout_marginStart="160dp"
-        android:layout_marginBottom="16dp" />
+        app:flexDirection="row"
+        app:flexWrap="wrap"
+        app:justifyContent="flex_start"
+        app:showDividerHorizontal="end">
 
-    <ImageView
-        android:id="@+id/iv_lottie"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_gravity="bottom|center"
-        android:layout_marginStart="160dp"
-        android:layout_marginBottom="16dp" />
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lav"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="17902-covid19.json"
+            app:lottie_loop="true" />
+    </com.google.android.flexbox.FlexboxLayout>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

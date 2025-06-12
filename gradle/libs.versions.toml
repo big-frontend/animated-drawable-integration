@@ -192,6 +192,7 @@ picasso-pollexor = { module = "com.squareup.picasso:picasso-pollexor", version.r
 glide-core = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 glide-recyclerview = { module = "com.github.bumptech.glide:recyclerview-integration", version.ref = "glide" }
 glide-okhttp3 = { module = "com.github.bumptech.glide:okhttp3-integration", version.ref = "glide" }
+glide-avif = { module = "com.github.bumptech.glide:avif-integration", version.ref = "glide" }
 glide-ksp = { module = "com.github.bumptech.glide:ksp", version.ref = "glide" }
 glide-compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glide" }
 #coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coilCompose" }
@@ -199,6 +200,8 @@ coil = { group = "io.coil-kt", name = "coil", version.ref = "coil" }
 coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
 coil-svg = { group = "io.coil-kt", name = "coil-svg", version.ref = "coil" }
 fresco = { module = "com.facebook.fresco:fresco", version.ref = "fresco" }
+fresco-imagepipeline-base = { module = "com.facebook.fresco:imagepipeline-base", version.ref = "fresco" }
+fresco-middleware = { module = "com.facebook.fresco:middleware", version.ref = "fresco" }
 fresco-webp = { module = "com.facebook.fresco:webpsupport", version.ref = "fresco" }
 fresco-animated-base = { module = "com.facebook.fresco:animated-base", version.ref = "fresco" }
 fresco-animated-drawable = { module = "com.facebook.fresco:animated-drawable", version.ref = "fresco" }

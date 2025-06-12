@@ -1,17 +1,17 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    repositories {
-        mavenLocal()
-        maven { url = uri("https://s01.oss.sonatype.org/content/repositories/public") }
-        maven { url = uri("https://maven.aliyun.com/repository/google/") }
-        maven { url = uri("https://maven.aliyun.com/repository/public") }
-        maven { url = uri("https://jitpack.io") }
-        maven { url = uri("https://plugins.gradle.org/m2/") }
-        maven{ url = uri("https://dl.bintray.com/kotlin/kotlin-eap")}
-        mavenCentral()
-        google()
-
-    }
+//    repositories {
+//        mavenLocal()
+//        maven { url = uri("https://s01.oss.sonatype.org/content/repositories/public") }
+//        maven { url = uri("https://maven.aliyun.com/repository/google/") }
+//        maven { url = uri("https://maven.aliyun.com/repository/public") }
+//        maven { url = uri("https://jitpack.io") }
+//        maven { url = uri("https://plugins.gradle.org/m2/") }
+//        maven{ url = uri("https://dl.bintray.com/kotlin/kotlin-eap")}
+//        mavenCentral()
+//        google()
+//
+//    }
     dependencies {
         classpath("io.github.jamesfchen:module-publisher-plugin:1.4.3")
     }
@@ -24,17 +24,18 @@ plugins {
     id("com.google.devtools.ksp") version "1.8.22-1.0.11" apply(false)
 }
 allprojects {
-    repositories {
-        mavenLocal()
-        maven { url = uri("https://s01.oss.sonatype.org/content/repositories/public") }
-        maven { url = uri("https://maven.aliyun.com/repository/google/") }
-        maven { url = uri("https://maven.aliyun.com/repository/public") }
-        maven { url = uri("https://plugins.gradle.org/m2/") }
-        maven { url = uri("https://jitpack.io") }
-        mavenCentral()
-        google()
-
-    }
+//    repositories {
+//        mavenLocal()
+//        maven { url = uri("https://dl.bintray.com/ttgamesdk/public") }
+//        maven { url = uri("https://s01.oss.sonatype.org/content/repositories/public") }
+//        maven { url = uri("https://maven.aliyun.com/repository/google/") }
+//        maven { url = uri("https://maven.aliyun.com/repository/public") }
+//        maven { url = uri("https://plugins.gradle.org/m2/") }
+//        maven { url = uri("https://jitpack.io") }
+//        mavenCentral()
+//        google()
+//
+//    }
     tasks.withType<JavaCompile> {
         sourceCompatibility = JavaVersion.VERSION_11.majorVersion
         targetCompatibility = JavaVersion.VERSION_11.majorVersion
