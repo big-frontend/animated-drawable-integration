@@ -37,6 +37,12 @@
         android:layout_gravity="center"
         android:orientation="vertical">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Fresco图库加载"
+            android:textSize="19sp" />
         <com.google.android.flexbox.FlexboxLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -79,8 +85,17 @@
                 android:id="@+id/iv_apng_fresco"
                 android:layout_width="80dp"
                 android:layout_height="80dp" />
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/iv_video_fresco"
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
         </com.google.android.flexbox.FlexboxLayout>
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Glide图库加载"
+            android:textSize="19sp" />
         <com.google.android.flexbox.FlexboxLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -126,6 +141,11 @@
                 android:onClick="onGlideLottie" />
             <ImageView
                 android:id="@+id/iv_apng_glide"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:onClick="onGlideLottie" />
+            <ImageView
+                android:id="@+id/iv_video_glide"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:onClick="onGlideLottie" />

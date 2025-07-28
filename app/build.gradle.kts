@@ -88,6 +88,7 @@ dependencies {
     implementation(project(":fresco-animated-pag"))
     implementation(project(":fresco-static-heif"))
     implementation(project(":fresco-static-avif"))
+    implementation(project(":fresco-static-videoframe"))
     api(libs.glide.core)
     api(libs.glide.avif)
     api(libs.glide.recyclerview)

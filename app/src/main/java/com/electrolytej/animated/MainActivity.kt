@@ -54,6 +54,7 @@ class MainActivity : AppCompatActivity() {
         loadPag()
         loadLottie()
         loadApng()
+        loadVideo()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -86,7 +87,7 @@ class MainActivity : AppCompatActivity() {
     fun onFrescoHeic(view: View) {}
 
     fun loadAvif() {
-        binding.ivAvifFresco.loadAvif("asset:///abandoned_filmgrain.avif")
+        binding.ivAvifFresco.loadUrl("asset:///abandoned_filmgrain.avif")
         Glide.with(this)
 //            .`as`(PagDrawable::class.java)
             .load("file:///android_asset/abandoned_filmgrain.avif")
@@ -113,10 +114,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun loadGif() {
-        binding.ivGifFresco.loadUrl("asset:///car.gif")
+        binding.ivGifFresco.loadUrl("https://test-sc.seeyouyima.com/eimg/adimg/2022/6/62ac2bbfa17b1_640_300.gif")
+//        binding.ivGifFresco.loadUrl("asset:///car.gif")
         Glide.with(this)
             .asGif()
-            .load(R.raw.car)
+//            .load(R.raw.car)
+            .load("https://test-sc.seeyouyima.com/eimg/adimg/2022/6/62ac2bbfa17b1_640_300.gif")
             .addListener(object : RequestListener<GifDrawable> {
                 override fun onLoadFailed(
                     e: GlideException?,
@@ -183,17 +186,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun loadPag() {
-        binding.ivPagFresco.loadPag("asset:///b.pag")
+        binding.ivPagFresco.loadUrl("asset:///b.pag")
         Glide.with(this)
 //            .`as`(PagDrawable::class.java)
-//            .load("file:///android_asset/abandoned_filmgrain.avif")
             .load("file:///android_asset/b.pag")
 //            .transform(FitCenter())
             .into(binding.ivPagGlide)
     }
 
     fun loadLottie() {
-        //        binding.ivLottieFresco.loadAvif("asset:///abandoned_filmgrain.avif")
+        binding.ivLottieFresco.loadUrl("asset:///17902-covid19.json")
         Glide.with(this)
             .`as`(LottieDrawable::class.java)
             .load("file:///android_asset/17902-covid19.json")
@@ -202,13 +204,25 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadApng() {
-        binding.ivApngFresco.loadApng("asset:///shake.png")
+        binding.ivApngFresco.loadUrl("asset:///shake.png")
         Glide.with(this)
 //            .`as`(PagDrawable::class.java)
-//            .load("file:///android_asset/abandoned_filmgrain.avif")
             .load("file:///android_asset/shake.png")
 //            .load("file:///android_asset/b.pag")
 //            .transform(FitCenter())
             .into(binding.ivApngGlide)
+    }
+    private fun loadVideo() {
+//        binding.ivVideoFresco.loadUrl("https://ad-evods.tianya.tv/evideo/2025/7/6867aacf2122b.mp4")
+        binding.ivVideoFresco.loadUrl("asset:///video.mp4")
+//        binding.ivVideoFresco.loadUrl(R.raw.video)
+//        binding.ivVideoFresco.loadFirstFrameVideo("https://ad-evods.tianya.tv/evideo/2025/7/6867aacf2122b.mp4")
+        Glide.with(this)
+//            .`as`(PagDrawable::class.java)
+//            .load("https://ad-evods.tianya.tv/evideo/2025/7/6867aacf2122b.mp4")
+            .load("file:///android_asset/video.mp4")
+//            .load(R.raw.video)
+//            .transform(FitCenter())
+            .into(binding.ivVideoGlide)
     }
 }
